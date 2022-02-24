@@ -17,7 +17,7 @@ int main()
 	int gold = 0, flag = 0,loop=0;
 	fstream dataFile;
 	
-	dataFile.open("way.txt", ios::out);
+	dataFile.open("way.txt", ios::out);//a data output file opens to record the gamer's path.
 
 	cout << "\nPlease enter size of the labirent: ";
 	cin >> size;
@@ -26,7 +26,7 @@ int main()
 		system("cls");
 
 
-		while (1)
+		while (1)//To control the maze size.
 		{
 			while(size>100||size<10)
 			{
@@ -83,9 +83,9 @@ int main()
 				}
 
 				//MONSTERS AND GOLDS//
-
-				n = size * 3;
-				m = size * 3;
+				//the number of monsters and gold is determined here.
+				n = size * 3;//number of monsters 
+				m = size * 3;//number of golds
 				for (a = 0; a < n; a++)
 				{
 					i = (rand() % size + 1);
@@ -107,11 +107,11 @@ int main()
 					{
 						if (M[i][j] == 0 && M[i][j] == B[i][j])
 						{
-							M[i][j] = 3;
+							M[i][j] = 3;//array B is used to determine the monster ones. 
 						}
 						else if (M[i][j] == 0 && M[i][j] == A[i][j])
 						{
-							M[i][j] = 8;
+							M[i][j] = 8;//array A is used to determine the gold ones.
 						}
 					}
 				}
